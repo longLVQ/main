@@ -11,7 +11,7 @@ import org.threeten.bp.OffsetDateTime;
  * SwaggerDto
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-06T16:11:25.295428911Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-06T16:12:40.881704928Z[GMT]")
 
 
 public class SwaggerDto   {

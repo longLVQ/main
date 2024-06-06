@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-06T16:11:25.295428911Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-06T16:12:40.881704928Z[GMT]")
 public interface PayVisApi {
 
     Logger log = LoggerFactory.getLogger(PayVisApi.class);
