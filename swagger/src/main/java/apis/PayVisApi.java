@@ -5,7 +5,8 @@
  */
 package apis;
 
-import Dto.PayDto;
+import Dto.SwaggerDto;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -15,8 +16,10 @@ import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -27,36 +30,30 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.*;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
-@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-06T10:01:03.156072475Z[GMT]")
-@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-06T16:11:25.295428911Z[GMT]")
 public interface PayVisApi {
 
-    PayVisApiDelegate getDelegate();
+    Logger log = LoggerFactory.getLogger(PayVisApi.class);
 
-    @Operation(summary = "Server example operation", description = "This is an example operation to show how security is applied to the call.", tags={ "pay-vis" })
-    @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "OK") })
-    @RequestMapping(value = "/example",
-        method = RequestMethod.GET)
-    default ResponseEntity<Void> exampleGet() {
-        return getDelegate().exampleGet();
-    }
+    Optional<ObjectMapper> getObjectMapper();
 
+    Optional<HttpServletRequest> getRequest();
+
+    
 
     @Operation(summary = "Server heartbeat operation", description = "This operation shows how to override the global security defined above, as we want to open it up for all users.", tags={ "pay-vis" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "A list of pets.", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = PayDto.class)))) })
+        @ApiResponse(responseCode = "200", description = "A list of pets.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = SwaggerDto.class))) })
     @RequestMapping(value = "/ping",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    default ResponseEntity<List<PayDto>> pingGet() {
-        return getDelegate().pingGet();
-    }
+    ResponseEntity<SwaggerDto> pingGet();
 
 }
 
