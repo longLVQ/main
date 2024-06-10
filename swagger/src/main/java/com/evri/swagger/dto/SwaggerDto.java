@@ -14,7 +14,7 @@ import jakarta.validation.constraints.*;
  * SwaggerDto
  */
 @Validated
-@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-10T10:40:08.579300243Z[GMT]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-10T10:41:13.353196269Z[GMT]")
 
 
 public class SwaggerDto   {
