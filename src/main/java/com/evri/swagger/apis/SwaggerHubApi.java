@@ -5,7 +5,7 @@
  */
 package com.evri.swagger.apis;
 
-import com.evri.swagger.dto.SwaggerDto123;
+import com.evri.swagger.dto.SwaggerDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-10T13:57:56.885720045Z[GMT]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-10T13:58:30.792091995Z[GMT]")
 @Validated
 public interface SwaggerHubApi {
 
@@ -59,15 +59,15 @@ public interface SwaggerHubApi {
 
     @Operation(summary = "The sample api", description = "Api sample", tags={ "swagger-hub" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "Api sample.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = SwaggerDto123.class))) })
+        @ApiResponse(responseCode = "200", description = "Api sample.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = SwaggerDto.class))) })
     @RequestMapping(value = "/swagger-api",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    default ResponseEntity<SwaggerDto123> swaggerApiGet() {
+    default ResponseEntity<SwaggerDto> swaggerApiGet() {
         if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
             if (getAcceptHeader().get().contains("application/json")) {
                 try {
-                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"date\" : \"2000-01-23\",\n  \"totalPay\" : 0.8008281904610115,\n  \"lastUpdatedAt\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"courierId\" : \"courierId\"\n}", SwaggerDto123.class), HttpStatus.NOT_IMPLEMENTED);
+                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"date\" : \"2000-01-23\",\n  \"totalPay\" : 0.8008281904610115,\n  \"lastUpdatedAt\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"courierId\" : \"courierId\"\n}", SwaggerDto.class), HttpStatus.NOT_IMPLEMENTED);
                 } catch (IOException e) {
                     log.error("Couldn't serialize response for content type application/json", e);
                     return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
