@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T08:31:45.187095915Z[GMT]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T08:32:46.307471799Z[GMT]")
 @Validated
 public interface SwaggerHubApi {
 
@@ -56,6 +56,29 @@ public interface SwaggerHubApi {
     default Optional<String> getAcceptHeader() {
         return getRequest().map(r -> r.getHeader("Accept"));
     }
+
+    @Operation(summary = "Get api", description = "Get api", tags={ "swagger-hub" })
+    @ApiResponses(value = { 
+        @ApiResponse(responseCode = "200", description = "Get api", content = @Content(mediaType = "application/json", schema = @Schema(implementation = SwaggerDto.class))) })
+    @RequestMapping(value = "/swagger-hub",
+        produces = { "application/json" }, 
+        method = RequestMethod.GET)
+    default ResponseEntity<SwaggerDto> swaggerHubGet() {
+        if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
+            if (getAcceptHeader().get().contains("application/json")) {
+                try {
+                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"date\" : \"2000-01-23\",\n  \"totalPay\" : 0.8008281904610115,\n  \"lastUpdatedAt\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"courierId\" : \"courierId\"\n}", SwaggerDto.class), HttpStatus.NOT_IMPLEMENTED);
+                } catch (IOException e) {
+                    log.error("Couldn't serialize response for content type application/json", e);
+                    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+                }
+            }
+        } else {
+            log.warn("ObjectMapper or HttpServletRequest not configured in default SwaggerHubApi interface so no example is generated");
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
+
 
     @Operation(summary = "Post api", description = "Post api", tags={ "swagger-hub" })
     @ApiResponses(value = { 
