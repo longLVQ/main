@@ -1,4 +1,4 @@
-package com.evri.swagger.dto;
+package com.evri.swagger.dtos;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,7 +12,7 @@ import jakarta.validation.constraints.*;
  * SwaggerRequest
  */
 @Validated
-@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T14:17:24.084183923Z[GMT]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T14:20:58.841257238Z[GMT]")
 
 
 public class SwaggerRequest   {
