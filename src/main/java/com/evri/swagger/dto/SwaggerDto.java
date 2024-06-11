@@ -1,88 +1,109 @@
-package io.swagger.model;
+package com.evri.swagger.dto;
+
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import org.springframework.validation.annotation.Validated;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
 
+/**
+ * SwaggerDto
+ */
+@Validated
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T12:21:57.667886383Z[GMT]")
 
-
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaInflectorServerCodegen", date = "2024-06-11T12:20:55.317086324Z[GMT]")
 
 public class SwaggerDto   {
   @JsonProperty("courierId")
   private String courierId = null;
+
   @JsonProperty("date")
   private LocalDate date = null;
+
   @JsonProperty("totalPay")
   private Double totalPay = null;
+
   @JsonProperty("lastUpdatedAt")
   private LocalDateTime lastUpdatedAt = null;
-  /**
-   **/
+
   public SwaggerDto courierId(String courierId) {
     this.courierId = courierId;
     return this;
   }
 
-  
+  /**
+   * Get courierId
+   * @return courierId
+   **/
   @Schema(description = "")
-  @JsonProperty("courierId")
-  public String getCourierId() {
+  
+    public String getCourierId() {
     return courierId;
   }
+
   public void setCourierId(String courierId) {
     this.courierId = courierId;
   }
 
-  /**
-   **/
   public SwaggerDto date(LocalDate date) {
     this.date = date;
     return this;
   }
 
-  
+  /**
+   * Get date
+   * @return date
+   **/
   @Schema(description = "")
-  @JsonProperty("date")
-  public LocalDate getDate() {
+  
+    @Valid
+    public LocalDate getDate() {
     return date;
   }
+
   public void setDate(LocalDate date) {
     this.date = date;
   }
 
-  /**
-   **/
   public SwaggerDto totalPay(Double totalPay) {
     this.totalPay = totalPay;
     return this;
   }
 
-  
+  /**
+   * Get totalPay
+   * @return totalPay
+   **/
   @Schema(description = "")
-  @JsonProperty("totalPay")
-  public Double getTotalPay() {
+  
+    public Double getTotalPay() {
     return totalPay;
   }
+
   public void setTotalPay(Double totalPay) {
     this.totalPay = totalPay;
   }
 
-  /**
-   **/
   public SwaggerDto lastUpdatedAt(LocalDateTime lastUpdatedAt) {
     this.lastUpdatedAt = lastUpdatedAt;
     return this;
   }
 
-  
+  /**
+   * Get lastUpdatedAt
+   * @return lastUpdatedAt
+   **/
   @Schema(description = "")
-  @JsonProperty("lastUpdatedAt")
-  public LocalDateTime getLastUpdatedAt() {
+  
+    @Valid
+    public LocalDateTime getLastUpdatedAt() {
     return lastUpdatedAt;
   }
+
   public void setLastUpdatedAt(LocalDateTime lastUpdatedAt) {
     this.lastUpdatedAt = lastUpdatedAt;
   }
@@ -97,10 +118,10 @@ public class SwaggerDto   {
       return false;
     }
     SwaggerDto swaggerDto = (SwaggerDto) o;
-    return Objects.equals(courierId, swaggerDto.courierId) &&
-        Objects.equals(date, swaggerDto.date) &&
-        Objects.equals(totalPay, swaggerDto.totalPay) &&
-        Objects.equals(lastUpdatedAt, swaggerDto.lastUpdatedAt);
+    return Objects.equals(this.courierId, swaggerDto.courierId) &&
+        Objects.equals(this.date, swaggerDto.date) &&
+        Objects.equals(this.totalPay, swaggerDto.totalPay) &&
+        Objects.equals(this.lastUpdatedAt, swaggerDto.lastUpdatedAt);
   }
 
   @Override
@@ -112,6 +133,7 @@ public class SwaggerDto   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SwaggerDto {\n");
+    
     sb.append("    courierId: ").append(toIndentedString(courierId)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    totalPay: ").append(toIndentedString(totalPay)).append("\n");

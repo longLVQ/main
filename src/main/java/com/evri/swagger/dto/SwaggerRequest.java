@@ -1,90 +1,105 @@
-package io.swagger.model;
+package com.evri.swagger.dto;
+
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.v3.oas.annotations.media.Schema;
+import org.springframework.validation.annotation.Validated;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
 
+/**
+ * SwaggerRequest
+ */
+@Validated
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T12:21:57.667886383Z[GMT]")
 
-
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaInflectorServerCodegen", date = "2024-06-11T12:20:55.317086324Z[GMT]")
 
 public class SwaggerRequest   {
   @JsonProperty("id")
   private String id = null;
+
   @JsonProperty("name")
   private String name = null;
+
   @JsonProperty("courierType")
   private String courierType = null;
+
   @JsonProperty("applicantId")
   private String applicantId = null;
-  /**
-   * Unique identifier of the courier
-   **/
+
   public SwaggerRequest id(String id) {
     this.id = id;
     return this;
   }
 
-  
+  /**
+   * Unique identifier of the courier
+   * @return id
+   **/
   @Schema(description = "Unique identifier of the courier")
-  @JsonProperty("id")
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
+
   public void setId(String id) {
     this.id = id;
   }
 
-  /**
-   * Name of the courier
-   **/
   public SwaggerRequest name(String name) {
     this.name = name;
     return this;
   }
 
-  
+  /**
+   * Name of the courier
+   * @return name
+   **/
   @Schema(description = "Name of the courier")
-  @JsonProperty("name")
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
+
   public void setName(String name) {
     this.name = name;
   }
 
-  /**
-   * Type of the courier
-   **/
   public SwaggerRequest courierType(String courierType) {
     this.courierType = courierType;
     return this;
   }
 
-  
+  /**
+   * Type of the courier
+   * @return courierType
+   **/
   @Schema(description = "Type of the courier")
-  @JsonProperty("courierType")
-  public String getCourierType() {
+  
+    public String getCourierType() {
     return courierType;
   }
+
   public void setCourierType(String courierType) {
     this.courierType = courierType;
   }
 
-  /**
-   * Identifier of the applicant
-   **/
   public SwaggerRequest applicantId(String applicantId) {
     this.applicantId = applicantId;
     return this;
   }
 
-  
+  /**
+   * Identifier of the applicant
+   * @return applicantId
+   **/
   @Schema(description = "Identifier of the applicant")
-  @JsonProperty("applicantId")
-  public String getApplicantId() {
+  
+    public String getApplicantId() {
     return applicantId;
   }
+
   public void setApplicantId(String applicantId) {
     this.applicantId = applicantId;
   }
@@ -99,10 +114,10 @@ public class SwaggerRequest   {
       return false;
     }
     SwaggerRequest swaggerRequest = (SwaggerRequest) o;
-    return Objects.equals(id, swaggerRequest.id) &&
-        Objects.equals(name, swaggerRequest.name) &&
-        Objects.equals(courierType, swaggerRequest.courierType) &&
-        Objects.equals(applicantId, swaggerRequest.applicantId);
+    return Objects.equals(this.id, swaggerRequest.id) &&
+        Objects.equals(this.name, swaggerRequest.name) &&
+        Objects.equals(this.courierType, swaggerRequest.courierType) &&
+        Objects.equals(this.applicantId, swaggerRequest.applicantId);
   }
 
   @Override
@@ -114,6 +129,7 @@ public class SwaggerRequest   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SwaggerRequest {\n");
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    courierType: ").append(toIndentedString(courierType)).append("\n");
