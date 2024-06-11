@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: Swagger-hub
+  description: Sample design api swagger hub
+  version: 1.0.1
+servers:
+- url: https://virtserver.swaggerhub.com/LONGLEVANQUOC/pay-visibility-service/1.0.1
+  description: SwaggerHub API Auto Mocking
+- url: https://virtserver.swaggerhub.com/LONGLEVANQUOC/swagger-hub/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /swagger-hub:
+    get:
+      tags:
+      - swagger-hub
+      summary: Get api
+      description: Get api
+      responses:
+        "200":
+          description: Get api
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwaggerDto'
+      x-accepts: application/json
+    post:
+      tags:
+      - swagger-hub
+      summary: Post api
+      description: Post api
+      responses:
+        "200":
+          description: Post api.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwaggerDto'
+      x-contentType: application/json
+      x-accepts: application/json
+components:
+  schemas:
+    SwaggerDto:
+      type: object
+      properties:
+        courierId:
+          type: string
+        date:
+          type: string
+          format: date
+        totalPay:
+          type: number
+          format: double
+        lastUpdatedAt:
+          type: string
+          format: date-time
+      example:
+        date: 2000-01-23
+        totalPay: 0.8008281904610115
+        lastUpdatedAt: 2000-01-23T04:56:07.000+00:00
+        courierId: courierId
+    SwaggerRequest:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the courier
+        name:
+          type: string
+          description: Name of the courier
+        courierType:
+          type: string
+          description: Type of the courier
+        applicantId:
+          type: string
+          description: Identifier of the applicant

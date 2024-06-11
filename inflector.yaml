@@ -1,0 +1,13 @@
+controllerPackage: io.swagger.controllers
+modelPackage:  io.swagger.model
+swaggerUrl: ./src/main/resources/openapi3.yaml
+modelMappings:
+  # to enable explicit mappings, use this syntax:
+  DefinitionFromSwaggerSpecification: fully.qualified.path.to.Model
+  SwaggerDto : io.swagger.model.SwaggerDto
+SwaggerRequest : io.swagger.model.SwaggerRequest
+
+entityProcessors:
+  - json
+  - xml
+  - yaml

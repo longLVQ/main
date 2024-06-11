@@ -1,24 +1,22 @@
-package dto;
-
-import javax.validation.constraints.*;
-import javax.validation.Valid;
-
-
-import io.swagger.annotations.*;
+package io.swagger.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import io.swagger.v3.oas.annotations.media.Schema;
 
+
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaInflectorServerCodegen", date = "2024-06-11T12:20:55.317086324Z[GMT]")
 
 public class SwaggerRequest   {
-
-  private @Valid String id = null;
-
-  private @Valid String name = null;
-
-  private @Valid String courierType = null;
-
-  private @Valid String applicantId = null;
-
+  @JsonProperty("id")
+  private String id = null;
+  @JsonProperty("name")
+  private String name = null;
+  @JsonProperty("courierType")
+  private String courierType = null;
+  @JsonProperty("applicantId")
+  private String applicantId = null;
   /**
    * Unique identifier of the courier
    **/
@@ -28,9 +26,8 @@ public class SwaggerRequest   {
   }
 
   
-  @ApiModelProperty(value = "Unique identifier of the courier")
+  @Schema(description = "Unique identifier of the courier")
   @JsonProperty("id")
-
   public String getId() {
     return id;
   }
@@ -47,9 +44,8 @@ public class SwaggerRequest   {
   }
 
   
-  @ApiModelProperty(value = "Name of the courier")
+  @Schema(description = "Name of the courier")
   @JsonProperty("name")
-
   public String getName() {
     return name;
   }
@@ -66,9 +62,8 @@ public class SwaggerRequest   {
   }
 
   
-  @ApiModelProperty(value = "Type of the courier")
+  @Schema(description = "Type of the courier")
   @JsonProperty("courierType")
-
   public String getCourierType() {
     return courierType;
   }
@@ -85,9 +80,8 @@ public class SwaggerRequest   {
   }
 
   
-  @ApiModelProperty(value = "Identifier of the applicant")
+  @Schema(description = "Identifier of the applicant")
   @JsonProperty("applicantId")
-
   public String getApplicantId() {
     return applicantId;
   }
@@ -120,7 +114,6 @@ public class SwaggerRequest   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SwaggerRequest {\n");
-    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    courierType: ").append(toIndentedString(courierType)).append("\n");

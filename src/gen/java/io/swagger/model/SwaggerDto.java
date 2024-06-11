@@ -1,26 +1,24 @@
-package dto;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
-
-
-import io.swagger.annotations.*;
+package io.swagger.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import io.swagger.v3.oas.annotations.media.Schema;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
+
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaInflectorServerCodegen", date = "2024-06-11T12:20:55.317086324Z[GMT]")
 
 public class SwaggerDto   {
-
-  private @Valid String courierId = null;
-
-  private @Valid LocalDate date = null;
-
-  private @Valid Double totalPay = null;
-
-  private @Valid LocalDateTime lastUpdatedAt = null;
-
+  @JsonProperty("courierId")
+  private String courierId = null;
+  @JsonProperty("date")
+  private LocalDate date = null;
+  @JsonProperty("totalPay")
+  private Double totalPay = null;
+  @JsonProperty("lastUpdatedAt")
+  private LocalDateTime lastUpdatedAt = null;
   /**
    **/
   public SwaggerDto courierId(String courierId) {
@@ -29,9 +27,8 @@ public class SwaggerDto   {
   }
 
   
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   @JsonProperty("courierId")
-
   public String getCourierId() {
     return courierId;
   }
@@ -47,9 +44,8 @@ public class SwaggerDto   {
   }
 
   
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   @JsonProperty("date")
-
   public LocalDate getDate() {
     return date;
   }
@@ -65,9 +61,8 @@ public class SwaggerDto   {
   }
 
   
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   @JsonProperty("totalPay")
-
   public Double getTotalPay() {
     return totalPay;
   }
@@ -83,9 +78,8 @@ public class SwaggerDto   {
   }
 
   
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   @JsonProperty("lastUpdatedAt")
-
   public LocalDateTime getLastUpdatedAt() {
     return lastUpdatedAt;
   }
@@ -118,7 +112,6 @@ public class SwaggerDto   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SwaggerDto {\n");
-    
     sb.append("    courierId: ").append(toIndentedString(courierId)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    totalPay: ").append(toIndentedString(totalPay)).append("\n");
