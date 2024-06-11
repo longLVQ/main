@@ -39,11 +39,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T06:42:55.608664149Z[GMT]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T06:44:22.996942906Z[GMT]")
 @Validated
-public interface SwaggerHubApi {
+public interface SwaggerHubApiApi {
 
-    Logger log = LoggerFactory.getLogger(SwaggerHubApi.class);
+    Logger log = LoggerFactory.getLogger(SwaggerHubApiApi.class);
 
     default Optional<ObjectMapper> getObjectMapper(){
         return Optional.empty();
@@ -57,7 +57,7 @@ public interface SwaggerHubApi {
         return getRequest().map(r -> r.getHeader("Accept"));
     }
 
-    @Operation(summary = "The sample api", description = "Api sample", tags={ "swagger-hub" })
+    @Operation(summary = "The sample api", description = "Api sample", tags={ "swagger-hub-api" })
     @ApiResponses(value = { 
         @ApiResponse(responseCode = "200", description = "Api sample.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = SwaggerDto.class))) })
     @RequestMapping(value = "/swagger-hub",
@@ -74,7 +74,7 @@ public interface SwaggerHubApi {
                 }
             }
         } else {
-            log.warn("ObjectMapper or HttpServletRequest not configured in default SwaggerHubApi interface so no example is generated");
+            log.warn("ObjectMapper or HttpServletRequest not configured in default SwaggerHubApiApi interface so no example is generated");
         }
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
