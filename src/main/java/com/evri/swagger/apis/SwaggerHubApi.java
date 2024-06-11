@@ -6,6 +6,7 @@
 package com.evri.swagger.apis;
 
 import com.evri.swagger.dto.SwaggerDto;
+import com.evri.swagger.dto.SwaggerRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -39,7 +40,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T14:12:50.032006831Z[GMT]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T14:16:22.955091498Z[GMT]")
 @Validated
 public interface SwaggerHubApi {
 
@@ -85,8 +86,10 @@ public interface SwaggerHubApi {
         @ApiResponse(responseCode = "200", description = "Post api.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = SwaggerDto.class))) })
     @RequestMapping(value = "/swagger-hub",
         produces = { "application/json" }, 
+        consumes = { "application/json" }, 
         method = RequestMethod.POST)
-    default ResponseEntity<SwaggerDto> swaggerHubPost() {
+    default ResponseEntity<SwaggerDto> swaggerHubPost(@Parameter(in = ParameterIn.DEFAULT, description = "Request body", required=true, schema=@Schema()) @Valid @RequestBody SwaggerRequest body
+) {
         if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
             if (getAcceptHeader().get().contains("application/json")) {
                 try {
