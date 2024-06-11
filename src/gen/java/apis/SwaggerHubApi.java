@@ -21,7 +21,7 @@ import javax.validation.Valid;
 
 @Path("/swagger-hub")
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJAXRSSpecServerCodegen", date = "2024-06-11T12:13:27.596726596Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJAXRSSpecServerCodegen", date = "2024-06-11T12:13:28.835709843Z[GMT]")
 public interface SwaggerHubApi {
 
     @GET
