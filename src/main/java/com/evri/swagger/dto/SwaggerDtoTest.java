@@ -11,13 +11,13 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 
 /**
- * SwaggerDto
+ * SwaggerDtoTest
  */
 @Validated
 @jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T06:48:26.631582040Z[GMT]")
 
 
-public class SwaggerDto   {
+public class SwaggerDtoTest   {
   @JsonProperty("courierId")
   private String courierId = null;
 
@@ -30,7 +30,7 @@ public class SwaggerDto   {
   @JsonProperty("lastUpdatedAt")
   private LocalDateTime lastUpdatedAt = null;
 
-  public SwaggerDto courierId(String courierId) {
+  public SwaggerDtoTest courierId(String courierId) {
     this.courierId = courierId;
     return this;
   }
@@ -49,7 +49,7 @@ public class SwaggerDto   {
     this.courierId = courierId;
   }
 
-  public SwaggerDto date(LocalDate date) {
+  public SwaggerDtoTest date(LocalDate date) {
     this.date = date;
     return this;
   }
@@ -69,7 +69,7 @@ public class SwaggerDto   {
     this.date = date;
   }
 
-  public SwaggerDto totalPay(Double totalPay) {
+  public SwaggerDtoTest totalPay(Double totalPay) {
     this.totalPay = totalPay;
     return this;
   }
@@ -88,7 +88,7 @@ public class SwaggerDto   {
     this.totalPay = totalPay;
   }
 
-  public SwaggerDto lastUpdatedAt(LocalDateTime lastUpdatedAt) {
+  public SwaggerDtoTest lastUpdatedAt(LocalDateTime lastUpdatedAt) {
     this.lastUpdatedAt = lastUpdatedAt;
     return this;
   }
@@ -117,11 +117,11 @@ public class SwaggerDto   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SwaggerDto swaggerDto = (SwaggerDto) o;
-    return Objects.equals(this.courierId, swaggerDto.courierId) &&
-        Objects.equals(this.date, swaggerDto.date) &&
-        Objects.equals(this.totalPay, swaggerDto.totalPay) &&
-        Objects.equals(this.lastUpdatedAt, swaggerDto.lastUpdatedAt);
+    SwaggerDtoTest swaggerDtoTest = (SwaggerDtoTest) o;
+    return Objects.equals(this.courierId, swaggerDtoTest.courierId) &&
+        Objects.equals(this.date, swaggerDtoTest.date) &&
+        Objects.equals(this.totalPay, swaggerDtoTest.totalPay) &&
+        Objects.equals(this.lastUpdatedAt, swaggerDtoTest.lastUpdatedAt);
   }
 
   @Override
@@ -132,7 +132,7 @@ public class SwaggerDto   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SwaggerDto {\n");
+    sb.append("class SwaggerDtoTest {\n");
     
     sb.append("    courierId: ").append(toIndentedString(courierId)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
