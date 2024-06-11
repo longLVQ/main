@@ -39,11 +39,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T07:02:13.047226370Z[GMT]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T08:31:45.187095915Z[GMT]")
 @Validated
-public interface SwaggerHubApiApi {
+public interface SwaggerHubApi {
 
-    Logger log = LoggerFactory.getLogger(SwaggerHubApiApi.class);
+    Logger log = LoggerFactory.getLogger(SwaggerHubApi.class);
 
     default Optional<ObjectMapper> getObjectMapper(){
         return Optional.empty();
@@ -57,13 +57,13 @@ public interface SwaggerHubApiApi {
         return getRequest().map(r -> r.getHeader("Accept"));
     }
 
-    @Operation(summary = "The sample api", description = "Api sample", tags={ "swagger-hub-api" })
+    @Operation(summary = "Post api", description = "Post api", tags={ "swagger-hub" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "Api sample.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = SwaggerDto.class))) })
+        @ApiResponse(responseCode = "200", description = "Post api.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = SwaggerDto.class))) })
     @RequestMapping(value = "/swagger-hub",
         produces = { "application/json" }, 
-        method = RequestMethod.GET)
-    default ResponseEntity<SwaggerDto> swaggerHubGet() {
+        method = RequestMethod.POST)
+    default ResponseEntity<SwaggerDto> swaggerHubPost() {
         if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
             if (getAcceptHeader().get().contains("application/json")) {
                 try {
@@ -74,7 +74,7 @@ public interface SwaggerHubApiApi {
                 }
             }
         } else {
-            log.warn("ObjectMapper or HttpServletRequest not configured in default SwaggerHubApiApi interface so no example is generated");
+            log.warn("ObjectMapper or HttpServletRequest not configured in default SwaggerHubApi interface so no example is generated");
         }
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
