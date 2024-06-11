@@ -9,13 +9,13 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 
 /**
- * CourierDetailDto
+ * SwaggerRequest
  */
 @Validated
-@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T09:07:00.409784495Z[GMT]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2024-06-11T09:30:21.126468746Z[GMT]")
 
 
-public class CourierDetailDto   {
+public class SwaggerRequest   {
   @JsonProperty("id")
   private String id = null;
 
@@ -28,7 +28,7 @@ public class CourierDetailDto   {
   @JsonProperty("applicantId")
   private String applicantId = null;
 
-  public CourierDetailDto id(String id) {
+  public SwaggerRequest id(String id) {
     this.id = id;
     return this;
   }
@@ -47,7 +47,7 @@ public class CourierDetailDto   {
     this.id = id;
   }
 
-  public CourierDetailDto name(String name) {
+  public SwaggerRequest name(String name) {
     this.name = name;
     return this;
   }
@@ -66,7 +66,7 @@ public class CourierDetailDto   {
     this.name = name;
   }
 
-  public CourierDetailDto courierType(String courierType) {
+  public SwaggerRequest courierType(String courierType) {
     this.courierType = courierType;
     return this;
   }
@@ -85,7 +85,7 @@ public class CourierDetailDto   {
     this.courierType = courierType;
   }
 
-  public CourierDetailDto applicantId(String applicantId) {
+  public SwaggerRequest applicantId(String applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -113,11 +113,11 @@ public class CourierDetailDto   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CourierDetailDto courierDetailDto = (CourierDetailDto) o;
-    return Objects.equals(this.id, courierDetailDto.id) &&
-        Objects.equals(this.name, courierDetailDto.name) &&
-        Objects.equals(this.courierType, courierDetailDto.courierType) &&
-        Objects.equals(this.applicantId, courierDetailDto.applicantId);
+    SwaggerRequest swaggerRequest = (SwaggerRequest) o;
+    return Objects.equals(this.id, swaggerRequest.id) &&
+        Objects.equals(this.name, swaggerRequest.name) &&
+        Objects.equals(this.courierType, swaggerRequest.courierType) &&
+        Objects.equals(this.applicantId, swaggerRequest.applicantId);
   }
 
   @Override
@@ -128,7 +128,7 @@ public class CourierDetailDto   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CourierDetailDto {\n");
+    sb.append("class SwaggerRequest {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
